@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --border-radius: 20px;
+}
+body {
+  background-color: #edefee;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas:
+    "brand"
+    "nav"
+    "main"
+    "footer";
+}
+/* font sizes and some modifications */
+body {
+  font-family: "Markazi Text", serif;
+  margin: 3rem 5%;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.5rem;
+}
+ul {
+  list-style: none;
+}
+a {
+  font-size: 1.5rem;
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+/* form here the main css styling begins */
+/* header */
+header {
+  grid-area: brand;
+}
+header img {
+  max-width: 80vw;
+  max-height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* nav */
+
+nav {
+  grid-area: nav;
+  background-color: #333333;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  border-radius: var(--border-radius);
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+nav ul li a {
+  padding: 1rem;
+  text-align: center;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+nav ul li a:hover {
+  transform: scale(1.2);
+}
+
+/* main */
+/* section1 */
+main {
+  grid-area: main;
+}
+
+.section1 {
+  margin-top: 1rem;
+  border-radius: var(--border-radius);
+  background-image: url(./assets/images/back.jpg);
+  background-color: #495e57;
+  height: 300px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.section1 > * > * {
+  text-align: left;
+  color: white;
+  padding: 1rem;
+}
+.greeting {
+  padding: 3rem;
+  border-radius: var(--border-radius);
+}
+.small-text {
+  border-radius: var(--border-radius);
+  font-family: "Karla", sans-serif;
+  max-width: 700px;
+
+  background-color: rgba(51, 51, 51, 0.7);
+}
+@media screen and (max-width: 550px) {
+  .small-text {
+    display: none;
+  }
+}
+/* section2 */
+.section2 img {
+  height: 200px;
+  width: 100%;
+}
+.section2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90vw;
+  justify-content: space-evenly;
+}
+.section2 > article {
+  background-color: #f4e4d6;
+  min-width: 330px;
+  max-width: 450px;
+  margin: 2rem 1rem;
+  padding-bottom: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: var(--border-radius);
+}
+.section2 h1,
+.section2 p {
+  padding: 1rem;
+}
+.section2 a {
+  font-size: 2rem;
+  background-color: white;
+  border: 4px solid white;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+.section2 a:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  /* border: 3px solid red; */
+  grid-area: footer;
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+}
+footer div {
+  text-align: left;
+  flex: 1;
+}
+.copyright {
+  text-align: right;
+  border-top: 3px solid black;
+}
